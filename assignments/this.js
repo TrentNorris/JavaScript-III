@@ -21,17 +21,13 @@ console.log(greeting('What\'s up! Nice to meet you.'));
 
 /* Principle 2
 Explicit Binding*/
-const player = {
-    name: "Joseph",
-    age: 24,
-    id: 66,
-    sport: 'basketball',
-    player_card: function() {
-       return this.name + ", age " + this.age + ", is playing with the lucky jersey number, " + this.id;
-    } 
+myObj = {
+    greeting: 'Hello, how are you, ',
+    greet: function(name) {
+        return this.greeting + `${name}` + '?'
+    }
 }
-console.log(player.player_card());
-
+console.log(myObj.greet('Richard'));
 
 // Principle 3
 
