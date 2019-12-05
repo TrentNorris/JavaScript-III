@@ -1,7 +1,7 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. 
+* 1. Window Binding, using this to select the window/console object on a global scope.
 * 2. 
 * 3. 
 * 4. 
@@ -10,8 +10,14 @@
 */
 
 // Principle 1
-
 // code example for Window Binding
+function greeting(phrase) {
+    console.log(this);
+    return phrase;
+}
+console.log(greeting('What\'s up! Nice to meet you.'));
+
+
 
 // Principle 2
 
