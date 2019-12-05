@@ -2,7 +2,7 @@
 * in your own words. explain the four principle for the "this" keyword below.
 *
 * 1. Window Binding, using this to select the window/console object on a global scope.
-* 2. 
+* 2. Implicit Binding, using this in a object's method, accessing data from said method.
 * 3. 
 * 4. 
 *
@@ -19,9 +19,19 @@ console.log(greeting('What\'s up! Nice to meet you.'));
 
 
 
-// Principle 2
+/* Principle 2
+Explicit Binding*/
+const player = {
+    name: "Joseph",
+    age: 24,
+    id: 66,
+    sport: 'basketball',
+    player_card: function() {
+       return this.name + ", age " + this.age + ", is playing with the lucky jersey number, " + this.id;
+    } 
+}
+console.log(player.player_card());
 
-// code example for Implicit Binding
 
 // Principle 3
 
