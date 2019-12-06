@@ -3,7 +3,7 @@
 *
 * 1. Window Binding, using this to select the window/console object on a global scope.
 * 2. Implicit Binding, using this in a object's method, accessing data from said method.
-* 3. 
+* 3. New Binding, using this inside a function, creating a constructor, with an inner function that is excuted through the variable we set.
 * 4. 
 *
 * write out a code example of each explanation above
@@ -20,18 +20,28 @@ console.log(greeting('What\'s up! Nice to meet you.'));
 
 
 /* Principle 2
-Explicit Binding*/
-myObj = {
-    greeting: 'Hello, how are you, ',
-    greet: function(name) {
-        return this.greeting + `${name}` + '?'
+Implicit Binding*/
+const person = {
+    name: "Sam",
+    greetMe: function(name) {
+        console.log("Hello, " + name + "! I\'m " + this.name);
     }
 }
-console.log(myObj.greet('Richard'));
+person.greetMe('Trent');
 
 // Principle 3
 
-// code example for New Binding
+function createRoom(room_name) {
+    this.room_name = room_name;
+    this.size = 'large';
+    this.bathroom = false;
+    this.cleanRoom = function() {
+        console.log('Cleaned ' + room_name + '\'s room');
+    };
+}
+let trentsRoom = new createRoom('Trent');
+console.log(trentsRoom);
+trentsRoom.cleanRoom();
 
 // Principle 4
 
