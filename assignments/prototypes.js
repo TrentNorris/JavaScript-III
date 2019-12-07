@@ -17,9 +17,9 @@
 */
 
 function GameObject() {
-  this.prototype.createdAt = createdAt;
-  this.prototype.name = name;
-  this.prototype.dimensions = dimensions; 
+  this.createdAt = this.createdAt;
+  this.name = this.name;
+  this.dimensions = this.dimensions; 
 }
 let destroy = GameObject.prototype.destroy = function(name) {
   return name + ` was removed from the game.`;
@@ -58,6 +58,7 @@ function Humanoid(attr) {
   this.weapons = attr.weapons;
   this.language = attr.language;
   CharacterStats.bind(attr);
+  GameObject.bind(attr);
   
 }
 
